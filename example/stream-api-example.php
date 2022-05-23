@@ -2,7 +2,6 @@
 
 require dirname(__DIR__). '/vendor/autoload.php';
 
-
 $accessKey = "testAccessKey";
 $secretKey = "testSecretKey";
 $options = [
@@ -23,6 +22,12 @@ try {
 
     $playUrl = $sdk->getRtmpPlayUrl($roomId, 3600*8); // 8小时
 
+    /**
+     * status 这个字段有 3 个值： none, pushing, closed
+     *  * none 表示直播未推流，不能获取到播流地址
+     *  * pushing 表示直播推流中，在此状态下可以获取到播流地址(flvUrl, hlsUrl)
+     *  * closed 表示推流中断，在此状态下也可以获取到播流地址，但可能无法播放
+     */
     echo "\n Play status: {$playUrl['status']}";
     echo "\n Play flv url: {$playUrl['flvUrl']}";
     echo "\n Play hls url: {$playUrl['hlsUrl']}";
