@@ -6,7 +6,7 @@ use Firebase\JWT\JWT;
 use Symfony\Component\HttpClient\HttpClient;
 use Throwable;
 
-class ESLiveSDK
+class ESLiveApi
 {
     private $accessKey;
 

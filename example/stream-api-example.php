@@ -11,7 +11,7 @@ $options = [
 
 $roomId = 25549;
 
-$sdk = new \ESLive\SDK\ESLiveSDK($accessKey, $secretKey, $options);
+$sdk = new \ESLive\SDK\ESLiveApi($accessKey, $secretKey, $options);
 
 try {
     $pushUrl = $sdk->createRtmpPushUrl($roomId, 3600*48); // 48小时

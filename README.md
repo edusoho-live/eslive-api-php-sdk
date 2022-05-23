@@ -1,2 +1,3 @@
-# eslive-php-sdk
-EduSoho Live PHP SDK
+# eslive-api-php-sdk
+
+EduSoho Live Api PHP SDK
