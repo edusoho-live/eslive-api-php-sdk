@@ -6,7 +6,7 @@ require dirname(__DIR__). '/vendor/autoload.php';
 $accessKey = "testAccessKey";
 $secretKey = "testSecretKey";
 $options = [
-    'endpoint' => 'https://live-dev.edusoho.cn/',
+    'endpoint' => 'https://live-dev.edusoho.cn/', // 测试环境接口地址， 生产环境不需要传此参数
 ];
 
 $roomId = 25549;
