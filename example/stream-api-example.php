@@ -3,8 +3,8 @@
 require dirname(__DIR__). '/vendor/autoload.php';
 
 
-$accessKey = "flv_self_aliyun";
-$secretKey = "testSecretKey4";
+$accessKey = "testAccessKey";
+$secretKey = "testSecretKey";
 $options = [
     'endpoint' => 'https://live-dev.edusoho.cn/',
 ];
