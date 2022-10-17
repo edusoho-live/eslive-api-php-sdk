@@ -27,6 +27,49 @@ class ESLiveApi
         }
     }
 
+    public function createMemberGroupBundle(string $name): array {
+        return $this->request('POST', '/api-v2/memberGroup/createBundle', [
+            'json' => [
+                'name' => $name,
+            ]
+        ]);
+    }
+
+    public function createMemberGroup(string $bundleNo, string $name): array {
+        return $this->request('POST', '/api-v2/memberGroup/create', [
+            'json' => [
+                'bundleNo' => $bundleNo,
+                'name' => $name,
+            ]
+        ]);
+    }
+
+    public function batchCreateMemberGroup(string $bundleNo, array $names): array {
+        return $this->request('POST', '/api-v2/memberGroup/batchCreate', [
+            'json' => [
+                'bundleNo' => $bundleNo,
+                'names' => $names,
+            ]
+        ]);
+    }
+
+    public function updateMemberGroupName(string $groupNo, string $name): array {
+        return $this->request('POST', '/api-v2/memberGroup/updateName', [
+            'json' => [
+                'groupNo' => $groupNo,
+                'name' => $name,
+            ]
+        ]);
+    }
+
+    public function deleteMemberGroup(string $groupNo): void {
+        $this->request('POST', '/api-v2/memberGroup/updateName', [
+            'json' => [
+                'groupNo' => $groupNo,
+            ]
+        ]);
+    }
+
     public function createRtmpPushUrl(int $roomId, int $expireTime): array {
         return $this->request('POST', '/api-v2/stream/createRtmpPushUrl', [
             'json' => [
