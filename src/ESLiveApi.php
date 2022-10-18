@@ -56,7 +56,7 @@ class ESLiveApi
     public function updateMemberGroupName(string $groupNo, string $name): array {
         return $this->request('POST', '/api-v2/memberGroup/updateName', [
             'json' => [
-                'groupNo' => $groupNo,
+                'no' => $groupNo,
                 'name' => $name,
             ]
         ]);
@@ -65,7 +65,15 @@ class ESLiveApi
     public function deleteMemberGroup(string $groupNo): void {
         $this->request('POST', '/api-v2/memberGroup/updateName', [
             'json' => [
-                'groupNo' => $groupNo,
+                'no' => $groupNo,
+            ]
+        ]);
+    }
+
+    public function batchDeleteMemberGroups(array $groupNos): void {
+        $this->request('POST', '/api-v2/memberGroup/batchDelete', [
+            'json' => [
+                'nos' => $groupNos,
             ]
         ]);
     }
@@ -94,7 +102,7 @@ class ESLiveApi
             $this->client = HttpClient::create([
                 'http_version' => '1.1',
                 'base_uri' => $this->options['endpoint'],
-                'timeout' => 60,
+                'timeout' => 15,
             ]);
         }
 
