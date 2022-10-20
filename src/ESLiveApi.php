@@ -78,8 +78,8 @@ class ESLiveApi
         ]);
     }
 
-    public function batchUpdateRoomMemberGroupBundles(array $roomIds, $bundleNo): void {
-        $this->request('POST', '/api-v2/room/batchUpdateMemberGroupBundles', [
+    public function batchUpdateRoomMemberGroupBundle(array $roomIds, $bundleNo): void {
+        $this->request('POST', '/api-v2/room/batchUpdateMemberGroupBundle', [
             'json' => [
                 'ids' => $roomIds,
                 'memberGroupBundleNo' => $bundleNo,
